@@ -2,12 +2,17 @@ import './App.css';
 import Alert from './componenents/Alert';
 import Navbar from './componenents/Navbar';
 import Textarea from './componenents/Textarea';
+import About from './componenents/About';
 import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light')
   const [alert, setAlert] = useState(null)
-  const [theme, setTheme] = useState(null)
 
   const pageTheme = {
     themeRed(){
@@ -62,9 +67,14 @@ function App() {
 
   return (
     <>
-      <Navbar title="My app" mode={mode} toggleMode={toggleMode} theme={pageTheme} />
-      <Alert alert={alert} />
-      <Textarea heading={'my text app'} mode={mode} showAlert={showAlert} />
+      <Router>
+        <Navbar title="My app" mode={mode} toggleMode={toggleMode} theme={pageTheme} />
+        <Alert alert={alert} />
+        <Routes>
+        <Route path="/about" element={<About/>} />
+        <Route path="/" element={<Textarea heading={'my text app'} mode={mode} showAlert={showAlert} />} />
+        </Routes>
+      </Router>
     </>
   );
 }
