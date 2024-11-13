@@ -71,7 +71,7 @@ function App() {
         <Navbar title="My app" mode={mode} toggleMode={toggleMode} theme={pageTheme} />
         <Alert alert={alert} />
         <Routes>
-        <Route path="/about" element={<About/>} />
+        <Route path="/about" element={<About mode={mode} />} />
         <Route path="/" element={<Textarea heading={'my text app'} mode={mode} showAlert={showAlert} />} />
         </Routes>
       </Router>
