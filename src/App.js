@@ -67,7 +67,10 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+        }} >
         <Navbar title="My app" mode={mode} toggleMode={toggleMode} theme={pageTheme} />
         <Alert alert={alert} />
         <Routes>
