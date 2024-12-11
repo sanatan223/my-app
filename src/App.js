@@ -75,7 +75,7 @@ function App() {
         <Alert alert={alert} />
         <Routes>
         <Route exact path="/about" element={<About mode={mode} />} />
-        <Route exact path="/" element={<Textarea heading={'my text app'} mode={mode} showAlert={showAlert} />} />
+        <Route exact path="/home" element={<Textarea heading={'my text app'} mode={mode} showAlert={showAlert} />} />
         </Routes>
       </Router>
     </>
