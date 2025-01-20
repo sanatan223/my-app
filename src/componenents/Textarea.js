@@ -4,13 +4,13 @@ export default function Textarea(textArea) {
   const [text, setText] = useState('your text here');
   const myStyle = textArea.mode === 'light'?
   {
-    backgroundColor: 'white',
+    backgroundColor: textArea.color || 'white',
     color: 'black',
     border: '1px solid black'
   }
   :
   {
-    backgroundColor: 'black',
+    backgroundColor: textArea.color || 'black',
     color: 'white',
     border: '1px solid white'
   }
